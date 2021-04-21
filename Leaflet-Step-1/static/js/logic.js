@@ -12,7 +12,8 @@ var myMap = L.map("mapid", {
     zoom: 4,
   });
 
-  lightmap.addTo(myMap);
+// Add light tile layer to map
+lightmap.addTo(myMap);
 
 // Url for GeoJSON for All Earthquakes in Past 7 Days
 const url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
@@ -98,31 +99,41 @@ d3.json(url).then((data) => {
 /************************************/
 // Function that picks color based on depth
 function pickColor(depthNum) {
+
+  // Declare color variable
   var color;
+
+  // Check if depth is greater than or equal to 90
   if (depthNum >= 90) {
     color = "#FF4019";
   }
 
+  // Check if depth is greater than or equal to 70
   else if (depthNum >= 70) {
     color = "#FF8C19";
   }
-
+  
+  // Check if depth is greater than or equal to 50
   else if (depthNum >= 50) {
     color = "#FFB319";
   }
-
+  
+  // Check if depth is greater than or equal to 30
   else if (depthNum >= 30) {
     color = "#FFD919";
   }
 
+  // Check if depth is greater than or equal to 10
   else if (depthNum >= 10) {
     color = "#B3FF19";
   }
 
+  // Default if depth is less than 10
   else {
     color = "#66FF19";
   }
 
+  // Return the chosen color
   return color;
 }
 
