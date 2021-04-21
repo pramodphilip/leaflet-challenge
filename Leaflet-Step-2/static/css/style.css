@@ -3,8 +3,32 @@ body {
   margin: 0;
 }
 
-#map,
+#mapid,
 body,
 html {
   height: 100%;
+}
+
+.legend {
+  display: inline-block;
+  background-color: white;
+  width: 130px;
+  height: 150px;
+}
+
+li {
+  list-style: none;
+}
+
+.rectangle {
+  margin-right: 500px;
+  width: 30px;
+  height: 22px;
+  padding-left: 0%;
+}
+
+.text {
+  padding-left: 40px;
+  width: 100px;
+  /* margin-bottom: 10px; */
 }
